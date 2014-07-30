@@ -1,8 +1,7 @@
-FROM ubuntu:12.04
+FROM ubuntu:14.10
 MAINTAINER John Ahlroos
 
-RUN apt-get update
-RUN apt-get install -y lighttpd php5-cgi php5-curl php5-gd php5-sqlite sqlite 
+RUN apt-get update && apt-get install -y lighttpd php5-cgi php5-curl php5-gd php5-sqlite sqlite 
 
 RUN lighty-enable-mod fastcgi
 RUN lighty-enable-mod fastcgi-php
